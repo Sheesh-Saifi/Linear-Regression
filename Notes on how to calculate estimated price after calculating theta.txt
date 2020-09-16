@@ -1,0 +1,18 @@
+// * means important steps
+Because gradient descent uses normalized features, you must apply normalization to the features of the prediction when using theta from gradient descent. This is discussed on page 14 of ex1.pdf. This means you should modify ex1_multi.m thusly:
+
+ 	*create a vector of the prediction features, such as "[1650 3]".
+ 	*subtract 'mu', then divide element-wise by 'sigma'. mu and sigma were returned by featureNormalize().
+ 	*add a bias unit (i.e. add an extra 1)
+ 	*multiply by theta
+
+the result is the prediction.
+If the two predictions are off by a few percent, then you need to modify the learning rate, see page 12 of ex1.pdf.
+
+You should get exactly (within 0.01) the same house price for both methods.
+
+The rest is in ex1.mlx
+
+
+
+Note :- This is only when you have calculated theta using gradientdescent. If you calculated theta using NormalEqn(see ex1.mlx) then just add a column of 1 to price(input) (i.e [1650 3] will be [1 1650 3]) then simply multiply price(input) by theta.
